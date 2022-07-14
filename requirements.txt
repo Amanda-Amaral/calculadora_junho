@@ -1,7 +1,7 @@
-pyaml==10.4.0
+pyaml==20.4.0
 scikit-learn==0.24.2
 pandas==1.2.2
-numpy==1.21.1
+numpy==1.21.1 
 catboost==0.25.1
 shap==0.37
 matplotlib==3.3.4
