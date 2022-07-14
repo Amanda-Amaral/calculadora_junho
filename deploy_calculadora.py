@@ -7,9 +7,9 @@ from catboost import CatBoostRegressor
 @st.cache()
 
 def loader(model_path="./model.cbm"):
-    model_input = pd.read_csv(data_path)       
+    model_input = pd.read_csv("./DF_ML_Barra.csv")       
     model = CatBoostRegressor()
-    model.load_model("./model.cbm")
+    model.load_model(model_path)
     return model
 
 model = loader()
@@ -18,6 +18,7 @@ def main():
     st.title("Calculadora de Aluguél")
     st.subheader("Barra da Tijuca - RJ")
 
+    st.sidebar.title("Entre com as características:")
     quartos =st.slider("Número de quartos",min_value=1,max_value=5,value=1)
     area = st.number_input("Área", min_value=22, max_value=436, step=4,value =70)
     pred = st.button("Predict")
